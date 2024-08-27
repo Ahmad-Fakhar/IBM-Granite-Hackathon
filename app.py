@@ -1,18 +1,27 @@
 import streamlit as st
 import os
-from groq import Groq
+from ibm_watsonx_ai.foundation_models import Model
+from ibm_watsonx_ai.foundation_models.utils.enums import ModelTypes
+from ibm_watsonx_ai.metanames import GenTextParamsMetaNames as GenParams
 
-# Set up page configuration
-st.set_page_config(page_title="Edu Nexus 📖", page_icon=":book:", layout="wide")
-
-# Load the IBM Granite model and tokenizer
-model_path = "ibm-granite/granite-8b-code-base"
-
-tokenizer = AutoTokenizer.from_pretrained(model_path)
-model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto")
-
+    model = Model(
+        model_id=ModelTypes.LLAMA_3_70B_INSTRUCT,
+        params={
+            GenParams.MAX_NEW_TOKENS: 900,
+            GenParams.RETURN_OPTIONS: {
+                'input_text': True,
+                'generated_tokens': True,
+            },
+        },
+        credentials=Credentials(
+            api_key=ibm_api_key,
+            url="https://us-south.ml.cloud.ibm.com",
+        ),
+        project_id=ibm_project_id,
+    )
+        generated_response = model.generate(prompt=prompt)
 # Function to call Groq API
-def call_groq_api(prompt):
+def call_api(prompt):
     try:
         chat_completion = client.chat.completions.create(
             messages=[{"role": "user", "content": prompt}],
