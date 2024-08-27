@@ -1,4 +1,7 @@
 # IBM-Granite-Hackathon
+![bEA3Ty0XTPGHIB_-GVni5w-ezgif com-webp-to-jpg-converter](https://github.com/user-attachments/assets/d6f94990-b69b-49d2-bc15-7cc723ffb1f4)
+
+
 EduNexus is a cutting-edge AI-powered platform that brings together key academic tools into one integrated solution, offering personalized support tailored to each student’s needs. Using IBM watsonx.ai’s advanced generative AI, EduNexus provides a range of features designed to enhance the educational experience:
 
 •	Personalized Learning Materials: EduNexus customizes content based on a student’s learning style and progress, ensuring that each student receives material suited to their individual needs.
