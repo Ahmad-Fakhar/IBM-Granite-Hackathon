@@ -20,7 +20,7 @@ from ibm_watsonx_ai.metanames import GenTextParamsMetaNames as GenParams
         project_id=ibm_project_id,
     )
         generated_response = model.generate(prompt=prompt)
-# Function to call Groq API
+# Function to call API
 def call_api(prompt):
     try:
         chat_completion = client.chat.completions.create(
